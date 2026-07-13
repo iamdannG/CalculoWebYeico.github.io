@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Integrales por Partes | Unidad 1</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- MathJax para Fórmulas Matemáticas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #dc3545; padding-left: 15px; } /* Color rojo para este tema */
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- MENÚ DE NAVEGACIÓN DESPLEGABLE -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Link al Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    
+                    <!-- Menú Plegable Unidad 1 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item active" href="partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menú Plegable Unidad 2 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container mt-5 mb-5">
+        
+        <!-- Título -->
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">3. Integrales por Partes</h1>
+        
+        <div class="row">
+            <!-- COLUMNA DE TEORÍA Y EJERCICIO (Izquierda) -->
+            <div class="col-lg-8">
+                <p class="lead">La <strong>Integración por Partes</strong> es un método que se utiliza cuando el integrando está formado por un producto de dos funciones diferentes (por ejemplo, una algebraica y una exponencial).</p>
+                
+                <!-- Fórmula Principal -->
+                <h4 class="mt-4">Fórmula Principal</h4>
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-3 border border-danger">
+                    $$ \int u \, dv = u \cdot v - \int v \, du $$
+                </div>
+
+                <h3 class="mt-4">¿Cómo elegir "u" y "dv"? (Regla ILATE)</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p>Para elegir cuál función será \(u\) y cuál será \(dv\), usamos la palabra <strong>ILATE</strong>. La primera función que aparezca en este orden será tu \(u\), y el resto será tu \(dv\):</p>
+                    <ul class="fs-5 mb-0">
+                        <li><strong>I</strong> nversas trigonométricas (ej. \(\arcsin(x)\))</li>
+                        <li><strong>L</strong> ogarítmicas (ej. \(\ln(x)\))</li>
+                        <li><strong>A</strong> lgebraicas (ej. \(x^2, 3x\))</li>
+                        <li><strong>T</strong> rigonométricas (ej. \(\sin(x), \cos(x)\))</li>
+                        <li><strong>E</strong> xponenciales (ej. \(e^x\))</li>
+                    </ul>
+                </div>
+
+                <!-- EJERCICIO PRÁCTICO -->
+                <h3 class="mt-5">Ejemplo Práctico</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p class="fs-5"><strong>Resolver:</strong> $$ \int x e^x dx $$</p>
+                    <ol class="fs-5">
+                        <li class="mb-2"><strong>Elegir \(u\) y \(dv\):</strong> Según ILATE, la algebraica (\(x\)) va primero que la exponencial (\(e^x\)).
+                            <br> \( u = x \)
+                            <br> \( dv = e^x dx \)
+                        </li>
+                        <li class="mb-2"><strong>Derivar \(u\) e integrar \(dv\):</strong>
+                            <br> \( du = dx \)
+                            <br> \( v = e^x \)
+                        </li>
+                        <li class="mb-2"><strong>Aplicar la fórmula ("Una vaca..."):</strong>
+                            $$ \int x e^x dx = x e^x - \int e^x dx $$
+                        </li>
+                        <li><strong>Resolver la integral restante:</strong>
+                            $$ = x e^x - e^x + C $$
+                        </li>
+                    </ol>
+                    <p class="text-success fw-bold fs-5 text-center mt-3 mb-0">¡Esa es la respuesta final!</p>
+                </div>
+
+            </div>
+            
+            <!-- COLUMNA DE APOYOS (Derecha) -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <!-- Alerta / Dato curioso -->
+                <div class="alert alert-danger shadow-sm border-danger">
+                    <h5 class="alert-heading fw-bold">🐄 Mnemotecnia Clásica</h5>
+                    <p class="mb-0">Para recordar la fórmula fácilmente, solo apréndete esta frase: <em>"Un Día Vi <strong>Una Vaca SIN Cola Vestida De Uniforme</strong>"</em>.</p>
+                </div>
+
+                <!-- Video Recomendado -->
+                <div class="card shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-danger">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Introducción y cómo aplicar ILATE</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=93kW5colCAU" target="_blank">
+                            <img src="https://img.youtube.com/vi/93kW5colCAU/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Integración por partes">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Matemáticas profe Alex</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Asegúrate de que este script cargue bien con internet) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

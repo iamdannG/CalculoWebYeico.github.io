@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Integrales Definidas | Unidad 1</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #198754; padding-left: 15px; } /* Cambié el color a verde para diferenciar temas */
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item active" href="definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">2. Integrales Definidas</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">Una <strong>integral definida</strong> nos permite calcular el área exacta debajo de una curva en un intervalo específico \([a, b]\). A diferencia de las integrales indefinidas, el resultado no es una nueva función, sino un <strong>número real</strong> (un valor numérico o cantidad de área).</p>
+                
+                <h4 class="mt-4">El Teorema Fundamental del Cálculo (Regla de Barrow)</h4>
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-3 border">
+                    $$ \int_{a}^{b} f(x) dx = F(b) - F(a) $$
+                </div>
+
+                <h3 class="mt-4">Propiedades Importantes</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <ul class="fs-5 mb-0">
+                        <li class="mb-3"><strong>Límites iguales:</strong> Si evalúas desde el mismo punto hasta el mismo punto, el área es cero. $$ \int_{a}^{a} f(x) dx = 0 $$</li>
+                        <li class="mb-3"><strong>Invertir los límites:</strong> Si cambias el orden de los límites, la integral cambia de signo. $$ \int_{a}^{b} f(x) dx = - \int_{b}^{a} f(x) dx $$</li>
+                        <li><strong>Aditividad en intervalos:</strong> Puedes dividir el área en partes. $$ \int_{a}^{c} f(x) dx = \int_{a}^{b} f(x) dx + \int_{b}^{c} f(x) dx $$</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert alert-info shadow-sm border-info">
+                    <h5 class="alert-heading fw-bold">💡 Adiós a la "+ C"</h5>
+                    <p class="mb-0">En las integrales definidas <strong>NO se escribe la constante "+ C"</strong>. Como estamos evaluando límites exactos y restando \(F(b) - F(a)\), si pusiéramos la constante, terminaría restándose a sí misma (C - C = 0) y desapareciendo mágicamente.</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-danger">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Introducción y el problema de las cuadraturas</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=TocqVkBzDrA" target="_blank">
+                            <img src="https://img.youtube.com/vi/TocqVkBzDrA/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Integrales definidas Introducción">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Matemáticas profe Alex</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

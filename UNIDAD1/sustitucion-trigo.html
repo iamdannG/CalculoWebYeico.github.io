@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Sustitución Trigonométrica | Unidad 1</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #0dcaf0; padding-left: 15px; } /* Color cyan para este tema */
+        .caso-box { border-left: 4px solid #0dcaf0; background-color: #f8f9fa; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item active" href="sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad2">
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">6. Sustitución Trigonométrica</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">Este método utiliza el Teorema de Pitágoras y las identidades trigonométricas para resolver integrales que contienen radicales de sumas o diferencias de cuadrados. Existen 4 casos fundamentales:</p>
+
+                <div class="caso-box p-3 rounded shadow-sm mb-4">
+                    <h5 class="text-info fw-bold">Caso 1: Expresiones con \( \sqrt{a^2 - u^2} \)</h5>
+                    <p class="mb-2"><strong>Sustitución:</strong> \( u = a \sin(\theta) \)</p>
+                    <p class="mb-1"><strong>Ejercicio:</strong> Resolver \( \int \frac{dx}{\sqrt{4 - x^2}} \)</p>
+                    <ul class="small mb-0">
+                        <li>Identificamos: \( a^2 = 4 \Rightarrow a = 2 \). Hacemos \( x = 2 \sin(\theta) \).</li>
+                        <li>Derivamos: \( dx = 2 \cos(\theta) d\theta \).</li>
+                        <li>Reemplazamos en la integral y simplificamos: \( \int \frac{2 \cos(\theta) d\theta}{2 \cos(\theta)} = \int d\theta \)</li>
+                        <li><strong>Respuesta:</strong> \( \theta + C = \arcsin\left(\frac{x}{2}\right) + C \)</li>
+                    </ul>
+                </div>
+
+                <div class="caso-box p-3 rounded shadow-sm mb-4">
+                    <h5 class="text-info fw-bold">Caso 2: Expresiones con \( \sqrt{a^2 + u^2} \)</h5>
+                    <p class="mb-2"><strong>Sustitución:</strong> \( u = a \tan(\theta) \)</p>
+                    <p class="mb-1"><strong>Ejercicio:</strong> Resolver \( \int \frac{dx}{x^2 + 9} \)</p>
+                    <ul class="small mb-0">
+                        <li>Identificamos: \( a^2 = 9 \Rightarrow a = 3 \). Hacemos \( x = 3 \tan(\theta) \).</li>
+                        <li>Derivamos: \( dx = 3 \sec^2(\theta) d\theta \).</li>
+                        <li>Reemplazamos: \( \int \frac{3 \sec^2(\theta) d\theta}{9(\tan^2(\theta) + 1)} = \int \frac{1}{3} d\theta \)</li>
+                        <li><strong>Respuesta:</strong> \( \frac{1}{3}\theta + C = \frac{1}{3}\arctan\left(\frac{x}{3}\right) + C \)</li>
+                    </ul>
+                </div>
+
+                <div class="caso-box p-3 rounded shadow-sm mb-4">
+                    <h5 class="text-info fw-bold">Caso 3: Expresiones con \( \sqrt{u^2 - a^2} \)</h5>
+                    <p class="mb-2"><strong>Sustitución:</strong> \( u = a \sec(\theta) \)</p>
+                    <p class="mb-1"><strong>Ejercicio:</strong> Resolver \( \int \frac{dx}{x \sqrt{x^2 - 16}} \)</p>
+                    <ul class="small mb-0">
+                        <li>Identificamos: \( a^2 = 16 \Rightarrow a = 4 \). Hacemos \( x = 4 \sec(\theta) \).</li>
+                        <li>Derivamos: \( dx = 4 \sec(\theta)\tan(\theta) d\theta \).</li>
+                        <li>Reemplazamos: \( \int \frac{4 \sec(\theta)\tan(\theta) d\theta}{4 \sec(\theta) (4 \tan(\theta))} = \frac{1}{4} \int d\theta \)</li>
+                        <li><strong>Respuesta:</strong> \( \frac{1}{4}\theta + C = \frac{1}{4}\text{arcsec}\left(\frac{x}{4}\right) + C \)</li>
+                    </ul>
+                </div>
+
+                <div class="caso-box p-3 rounded shadow-sm mb-4">
+                    <h5 class="text-info fw-bold">Caso 4: Completando el Cuadrado \( ax^2 + bx + c \)</h5>
+                    <p class="mb-2">Se usa álgebra para transformar el trinomio en uno de los 3 casos anteriores.</p>
+                    <p class="mb-1"><strong>Ejercicio:</strong> Resolver \( \int \frac{dx}{x^2 + 6x + 25} \)</p>
+                    <ul class="small mb-0">
+                        <li>Completamos el cuadrado: \( x^2 + 6x + 9 + 16 = (x+3)^2 + 16 \). ¡Se convirtió en el Caso 2!</li>
+                        <li>Sustitución: \( u = (x+3) \) y \( a = 4 \). Hacemos \( x+3 = 4 \tan(\theta) \).</li>
+                        <li>Derivamos: \( dx = 4 \sec^2(\theta) d\theta \).</li>
+                        <li><strong>Respuesta:</strong> Aplicando el Caso 2 directo nos da \( \frac{1}{4}\arctan\left(\frac{x+3}{4}\right) + C \)</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert alert-info shadow-sm border-info">
+                    <h5 class="alert-heading fw-bold">📐 Dibuja el Triángulo</h5>
+                    <p class="mb-0">El secreto para no perderte al final del ejercicio es dibujar un triángulo rectángulo, ubicar tu ángulo \( \theta \), y usar el teorema de Pitágoras para devolver los términos de \( \theta \) a las \( x \) originales.</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-info">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Introducción y análisis de casos</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=RM6_xi9AKV8" target="_blank">
+                            <img src="https://img.youtube.com/vi/RM6_xi9AKV8/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Sustitución Trigonométrica">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Matemáticas profe Alex</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

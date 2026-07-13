@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Área bajo la curva | Unidad 2</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #0dcaf0; padding-left: 15px; } /* Color turquesa para este tema */
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="../UNIDAD1/indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad2">
+                            <li><a class="dropdown-item" href="lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item active" href="area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">3. Área bajo y entre curvas</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">El uso más clásico de la integral definida es calcular áreas. Cuando queremos hallar el área atrapada entre dos o más funciones, aplicamos la regla de <strong>"Curva superior menos curva inferior"</strong>.</p>
+                
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-3 border border-info">
+                    $$ A = \int_{a}^{b} [f(x) - g(x)] dx $$
+                </div>
+
+                <h3 class="mt-5">Ejercicio 1: Área entre 2 funciones</h3>
+                <div class="bg-white p-4 rounded shadow-sm border mb-4">
+                    <p class="fs-5"><strong>Encontrar el área limitada por:</strong> \( y = x^2 \) y \( y = x + 2 \)</p>
+                    
+                    <div class="text-center my-3">
+                        <img src="../IMG/Geogebra2funciones1.PNG" class="img-fluid rounded border" alt="Gráfica de 2 funciones">
+                    </div>
+
+                    <ol class="fs-5 mb-0">
+                        <li class="mb-2"><strong>Puntos de corte:</strong> Igualamos \( x^2 = x + 2 \Rightarrow x^2 - x - 2 = 0 \). Resolviendo obtenemos \( x = -1 \) y \( x = 2 \).</li>
+                        <li class="mb-2"><strong>Identificar arriba y abajo:</strong> Entre -1 y 2, la recta \( x + 2 \) está por encima de la parábola \( x^2 \).</li>
+                        <li class="mb-2"><strong>Plantear la integral:</strong>
+                            $$ A = \int_{-1}^{2} [(x + 2) - x^2] dx $$
+                        </li>
+                        <li><strong>Resolver:</strong>
+                            $$ A = \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_{-1}^{2} = \frac{9}{2} = 4.5 \text{ u}^2 $$
+                        </li>
+                    </ol>
+                </div>
+
+                <h3 class="mt-5">Ejercicio 2: Área acotada por 3 funciones</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p class="fs-5"><strong>Encontrar el área limitada por:</strong> \( y = x^2 \), \( y = 2 - x \) y el eje X (\( y = 0 \))</p>
+                    
+                    <div class="text-center my-3">
+                        <img src="../IMG/Geogebra3funciones1.PNG" class="img-fluid rounded border" alt="Gráfica de 3 funciones">
+                    </div>
+
+                    <ol class="fs-5 mb-0">
+                        <li class="mb-2"><strong>Puntos de corte:</strong><br> 
+                            Parábola y recta: \( x^2 = 2 - x \Rightarrow x = 1 \).<br>
+                            Parábola y eje X: \( x^2 = 0 \Rightarrow x = 0 \).<br>
+                            Recta y eje X: \( 2 - x = 0 \Rightarrow x = 2 \).
+                        </li>
+                        <li class="mb-2"><strong>Dividir el área:</strong> Como el techo del área cambia en \(x=1\), necesitamos dos integrales.
+                            De \(0\) a \(1\), el techo es \(x^2\). De \(1\) a \(2\), el techo es \(2-x\).
+                        </li>
+                        <li class="mb-2"><strong>Plantear las integrales:</strong>
+                            $$ A = \int_{0}^{1} (x^2 - 0) dx + \int_{1}^{2} ((2 - x) - 0) dx $$
+                        </li>
+                        <li><strong>Resolver sumando ambas partes:</strong>
+                            $$ A = \left[ \frac{x^3}{3} \right]_{0}^{1} + \left[ 2x - \frac{x^2}{2} \right]_{1}^{2} $$
+                            $$ A = \frac{1}{3} + \frac{1}{2} = \frac{5}{6} \text{ u}^2 $$
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert alert-info shadow-sm border-info">
+                    <h5 class="alert-heading fw-bold">📏 Unidades Cuadradas</h5>
+                    <p class="mb-0">Siempre que termines un ejercicio de áreas, recuerda poner <strong>\( \text{u}^2 \)</strong> (unidades cuadradas) al final de tu respuesta. En la Universidad, olvidar eso en el examen te puede costar décimas valiosas.</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white sticky-top" style="top: 80px;">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-info">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Puntos de corte y cálculo de áreas</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=hZ1n4-Cpn74" target="_blank">
+                            <img src="https://img.youtube.com/vi/hZ1n4-Cpn74/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Área entre curvas">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Matemáticas profe Alex</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

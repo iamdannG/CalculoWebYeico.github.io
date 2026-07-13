@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Integración por Sustitución | Unidad 1</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #fd7e14; padding-left: 15px; } /* Color naranja para este tema */
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item active" href="sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad2">
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD2/cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">4. Integración por Sustitución</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">La <strong>Integración por Sustitución</strong> (o cambio de variable) es como aplicar la regla de la cadena al revés. Se utiliza para convertir una integral que parece muy complicada en una mucho más sencilla cambiando una parte de la función por una nueva letra, generalmente la <strong>\( u \)</strong>.</p>
+                
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-3 border border-warning">
+                    $$ \int f(g(x))g'(x) dx = \int f(u) du $$
+                </div>
+
+                <h3 class="mt-4">Pasos para el éxito</h3>
+                <div class="bg-white p-4 rounded shadow-sm border mb-4">
+                    <ol class="fs-5 mb-0">
+                        <li class="mb-2">Elige una expresión para que sea <strong>\( u \)</strong>.</li>
+                        <li class="mb-2">Deriva \( u \) para encontrar <strong>\( du \)</strong>.</li>
+                        <li class="mb-2">Sustituye todo en la integral para que quede en términos de \( u \).</li>
+                        <li class="mb-2">Resuelve la nueva integral fácil.</li>
+                        <li>Devuelve la variable original (cambia la \( u \) por lo que valía al principio) y suma \( + C \).</li>
+                    </ol>
+                </div>
+
+                <h3 class="mt-5">Ejemplo Práctico</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p class="fs-5"><strong>Resolver:</strong> $$ \int \frac{2x}{x^2 + 4} dx $$</p>
+                    <ol class="fs-5">
+                        <li class="mb-2"><strong>Elegir \( u \):</strong> Vemos que la derivada del denominador está (casi) en el numerador.
+                            <br> \( u = x^2 + 4 \)
+                        </li>
+                        <li class="mb-2"><strong>Derivar \( u \) para encontrar \( du \):</strong>
+                            <br> \( du = 2x \, dx \)
+                        </li>
+                        <li class="mb-2"><strong>Sustituir en la integral:</strong> Todo el denominador es \( u \), y lo de arriba (\( 2x \, dx \)) es exactamente \( du \).
+                            $$ \int \frac{1}{u} du $$
+                        </li>
+                        <li class="mb-2"><strong>Integrar:</strong>
+                            $$ = \ln|u| + C $$
+                        </li>
+                        <li><strong>Volver a la variable original \( x \):</strong>
+                            $$ = \ln|x^2 + 4| + C $$
+                        </li>
+                    </ol>
+                    <p class="text-success fw-bold fs-5 text-center mt-3 mb-0">¡Esa es la respuesta final!</p>
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert alert-warning shadow-sm border-warning">
+                    <h5 class="alert-heading fw-bold">🕵️‍♂️ El secreto está en la derivada</h5>
+                    <p class="mb-0">¿No sabes qué parte de la función elegir como <strong>\( u \)</strong>? Busca una expresión cuya derivada esté multiplicando en otra parte de la misma integral. ¡Ese es el truco!</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-warning">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Introducción y cambio de variable paso a paso</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=me4h_Ye3o3Y" target="_blank">
+                            <img src="https://img.youtube.com/vi/me4h_Ye3o3Y/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Integración por sustitución">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Matemáticas profe Alex</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

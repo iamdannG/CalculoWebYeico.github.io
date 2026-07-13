@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Volumen de Sólido de Revolución | Unidad 2</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #dc3545; padding-left: 15px; } /* Color rojo para este tema */
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="../UNIDAD1/indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad2">
+                            <li><a class="dropdown-item" href="lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item active" href="volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item" href="cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">4. Volumen de Sólido de Revolución</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">Cuando hacemos girar un área plana alrededor de un eje (como el eje X o el eje Y), se forma una figura en 3D llamada <strong>sólido de revolución</strong>. Usamos integrales para sumar el volumen de infinitos discos (o cilindros) que componen esa figura.</p>
+                
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-3 border border-danger">
+                    <p class="fs-5 text-muted mb-2">Método de Discos (Giro en Eje X)</p>
+                    $$ V = \pi \int_{a}^{b} [f(x)]^2 dx $$
+                </div>
+
+                <h3 class="mt-5">Ejercicio Práctico</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p class="fs-5"><strong>Calcular el volumen del sólido generado al girar la región limitada por:</strong> \( y = \sqrt{x} \), el eje X y la recta \( x = 4 \) alrededor del eje X.</p>
+                    
+                    <div class="text-center my-4">
+                        <img src="../IMG/Geogebra3D 1.PNG" class="img-fluid rounded border shadow-sm" alt="Gráfica de sólido de revolución">
+                    </div>
+
+                    <ol class="fs-5 mb-0">
+                        <li class="mb-2"><strong>Identificar los límites y el radio:</strong> El área va desde \( x = 0 \) hasta \( x = 4 \). Al girar alrededor del eje X, el radio de cada disco es exactamente la altura de la función, es decir, \( R = \sqrt{x} \).</li>
+                        <li class="mb-2"><strong>Plantear la integral:</strong>
+                            $$ V = \pi \int_{0}^{4} (\sqrt{x})^2 dx $$
+                        </li>
+                        <li class="mb-2"><strong>Simplificar y resolver:</strong> La raíz se cancela con el cuadrado.
+                            $$ V = \pi \int_{0}^{4} x \, dx $$
+                            $$ V = \pi \left[ \frac{x^2}{2} \right]_{0}^{4} $$
+                        </li>
+                        <li><strong>Evaluar los límites:</strong>
+                            $$ V = \pi \left( \frac{16}{2} - 0 \right) = 8\pi \text{ u}^3 $$
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert alert-danger shadow-sm border-danger">
+                    <h5 class="alert-heading fw-bold">🧊 Unidades Cúbicas</h5>
+                    <p class="mb-0">A diferencia de las áreas que son al cuadrado, ¡aquí estás calculando espacio en 3D! Nunca olvides añadir <strong>\( \text{u}^3 \)</strong> al final de tu respuesta de volumen.</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white sticky-top" style="top: 80px;">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-danger">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Método de discos paso a paso</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=BgJhiXhuFhk" target="_blank">
+                            <img src="https://img.youtube.com/vi/BgJhiXhuFhk/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Volumen de Sólido de Revolución">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Canal: MateFacil</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

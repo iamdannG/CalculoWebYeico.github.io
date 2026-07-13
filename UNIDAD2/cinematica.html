@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Cinemática | Unidad 2</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .tema-header { border-left: 5px solid #20c997; padding-left: 15px; } /* Color Teal (Verde azulado) */
+        .border-teal { border-color: #20c997 !important; }
+        .text-teal { color: #20c997 !important; }
+        .bg-teal-light { background-color: #e0f8f1; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Yeico Daniel García Benítes</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUnidad1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 1
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad1">
+                            <li><a class="dropdown-item" href="../UNIDAD1/indefinidas.html">1. Integrales Indefinidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/definidas.html">2. Integrales Definidas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/partes.html">3. Integrales por Partes</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion.html">4. Integrales por Sustitución</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/trigonometricas.html">5. Funciones Trigonométricas</a></li>
+                            <li><a class="dropdown-item" href="../UNIDAD1/sustitucion-trigo.html">6. Sustitución Trigonométrica</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarUnidad2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Unidad 2
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarUnidad2">
+                            <li><a class="dropdown-item" href="lineales-no-repetidas.html">1. Fracciones Parciales (No repetidas)</a></li>
+                            <li><a class="dropdown-item" href="lineales-repetidas.html">2. Fracciones Parciales (Repetidas)</a></li>
+                            <li><a class="dropdown-item" href="area-curva.html">3. Área bajo la curva</a></li>
+                            <li><a class="dropdown-item" href="volumen-solido.html">4. Volumen de sólido de revolución</a></li>
+                            <li><a class="dropdown-item" href="longitud-curva.html">5. Longitud de una curva</a></li>
+                            <li><a class="dropdown-item" href="longitud-parametrica.html">6. Longitud de curva paramétrica</a></li>
+                            <li><a class="dropdown-item active" href="cinematica.html">7. Cinemática</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        
+        <h1 class="display-5 fw-bold text-dark tema-header mb-4">7. Aplicaciones en la Cinemática</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">En la física, si conocemos la aceleración de un objeto, podemos aplicar integrales indefinidas para "retroceder" y encontrar su función de velocidad, y si integramos la velocidad, encontraremos su función de posición.</p>
+                
+                <div class="bg-white p-4 rounded shadow-sm my-4 text-center fs-4 border border-teal">
+                    <p class="mb-3"><strong>De Aceleración a Velocidad:</strong> $$ v(t) = \int a(t) \, dt $$</p>
+                    <p class="mb-0"><strong>De Velocidad a Posición:</strong> $$ s(t) = \int v(t) \, dt $$</p>
+                </div>
+
+                <h3 class="mt-5">Ejercicio Práctico</h3>
+                <div class="bg-white p-4 rounded shadow-sm border">
+                    <p class="fs-5"><strong>Problema:</strong> Un vehículo tiene una aceleración \( a(t) = 6t \). Si su velocidad inicial (en \(t=0\)) es \( v(0) = 2 \text{ m/s} \) y parte de la posición \( s(0) = 0 \text{ m} \), encuentra la ecuación de su posición \( s(t) \).</p>
+                    
+                    <ol class="fs-5 mb-0">
+                        <li class="mb-2"><strong>Hallar la velocidad:</strong> Integramos la aceleración.
+                            $$ v(t) = \int 6t \, dt = 3t^2 + C_1 $$
+                        </li>
+                        <li class="mb-2"><strong>Encontrar la constante \( C_1 \):</strong> Usamos el dato \( v(0) = 2 \).
+                            $$ 2 = 3(0)^2 + C_1 \Rightarrow C_1 = 2 $$
+                            La ecuación de velocidad es: <strong>\( v(t) = 3t^2 + 2 \)</strong>.
+                        </li>
+                        <li class="mb-2"><strong>Hallar la posición:</strong> Integramos la velocidad.
+                            $$ s(t) = \int (3t^2 + 2) \, dt = t^3 + 2t + C_2 $$
+                        </li>
+                        <li><strong>Encontrar la constante \( C_2 \):</strong> Usamos el dato \( s(0) = 0 \).
+                            $$ 0 = (0)^3 + 2(0) + C_2 \Rightarrow C_2 = 0 $$
+                            La ecuación final de la posición es:
+                            <br><strong class="text-teal fs-4">\( s(t) = t^3 + 2t \)</strong>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                
+                <div class="alert shadow-sm text-dark bg-teal-light border-teal" style="border-left: 5px solid #20c997;">
+                    <h5 class="alert-heading fw-bold">🧠 El Valor de "C"</h5>
+                    <p class="mb-0">En cinemática, las constantes de integración siempre tienen un significado físico. \(C_1\) suele representar la <strong>velocidad inicial</strong> (\(v_0\)) y \(C_2\) la <strong>posición inicial</strong> (\(s_0\)).</p>
+                </div>
+
+                <div class="card shadow-sm border-0 bg-white sticky-top" style="top: 80px;">
+                    <div class="card-body text-center p-3">
+                        <h5 class="card-title fw-bold text-teal">Video Recomendado</h5>
+                        <p class="card-text text-muted small mb-2">Aplicación de la Integral en Física</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=VM1mfCvPWBE" target="_blank">
+                            <img src="https://img.youtube.com/vi/VM1mfCvPWBE/maxresdefault.jpg" class="img-fluid rounded shadow-sm" alt="Miniatura: Cinemática e Integrales">
+                        </a>
+                        <p class="mt-2 mb-0 fw-bold">Física para todos</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
